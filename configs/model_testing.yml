@@ -1,0 +1,16 @@
+SOURCE: GTA
+TARGET: BDD
+DATA_DIRECTORY_SOURCE: '../OCDA/C-Driving/train/source' 
+DATA_DIRECTORY_TARGET: '../OCDA/C-Driving/train/compound'
+DATA_LIST_TARGET: 'sfocda/dataset/bdd_list/train/3domains.txt'
+NUM_WORKERS: 4
+EXP_NAME: model_testing
+TEST:
+  MODE: single
+  MODEL: ['VGG',]
+  RESTORE_FROM: ['pretrain/target_trained_model.pth']
+  INPUT_SIZE_TARGET: [1024,512]
+  OUTPUT_SIZE_TARGET: [2048, 1024] #[1280,720]
+  DATA_LIST_TARGET: 'sfocda/dataset/bdd_list/val'
+  DATA_DIRECTORY_TARGET: '../OCDA/C-Driving/val/compound'
+  

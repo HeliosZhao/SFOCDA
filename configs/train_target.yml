@@ -1,0 +1,25 @@
+SOURCE: GTA
+TARGET: BDD
+DATA_DIRECTORY_SOURCE: '../OCDA/C-Driving/train/source'
+DATA_DIRECTORY_TARGET: '../OCDA/C-Driving/train/compound'
+DATA_LIST_TARGET: 'sfocda/dataset/bdd_list/train/3domains.txt'
+NUM_WORKERS: 4
+EXP_NAME: train_target
+TRAIN:
+  DA_METHOD: train_target
+  MODEL: VGG
+  RESTORE_FROM: 'pretrain/source_trained_model.pth'
+  BATCH_SIZE_TARGET: 4
+  PERCENT: 0.5
+  THRESHOLD: 0.9
+  LEARNING_RATE: 1.0e-4
+  INPUT_SIZE_TARGET: [1024,512]
+  COLOR_JITTER: 0.5
+  GAUSSIAN_BLUR: 0.5
+  GRAY_SCALE: 0.2
+TEST:
+  MODE: best_accumulate
+  INPUT_SIZE_TARGET: [1024,512]
+  OUTPUT_SIZE_TARGET: [1280,720]
+  DATA_LIST_TARGET: 'sfocda/dataset/bdd_list/val'
+  DATA_DIRECTORY_TARGET: '../OCDA/C-Driving/val/compound'
