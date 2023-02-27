@@ -14,7 +14,7 @@
 * CUDA>=10.2
 * Training Data
   
-  Download [C-Driving Dataset](https://drive.google.com/drive/folders/1VXwbSKJnGO8etXy7H8GUjAjSIN5ddlcv?usp=sharing). Unzip the dataset and ensure the file structure is as follow:
+  Download [C-Driving Dataset](https://drive.google.com/file/d/1t92zHXfHSlJRRQm8xVv-ewWeBi_M-SQH/view?usp=share_link). Unzip the dataset and ensure the file structure is as follow:
 
   ```
   C-Driving
